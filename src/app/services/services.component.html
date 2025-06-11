@@ -2,7 +2,7 @@
   <h2 class="text-center mb-4">Nuestros Servicios</h2>
   <div class="row g-3">
     <div class="col-md-4 mb-4" *ngFor="let service of services">
-      <div class="card h-100 shadow-sm rounded-4 card-bg">
+      <div class="card h-100 rounded-4 card-bg">
         <img [src]="service.imageUrl" class="card-img-top" [alt]="service.name">
         <div class="card-body">
           <h5 class="card-title text-center">{{ service.name }}</h5>
