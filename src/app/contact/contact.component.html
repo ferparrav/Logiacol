@@ -3,27 +3,31 @@
   <div class="row">
     <!-- Formulario -->
     <div class="col-md-6">
-      <form action="https://formsubmit.co/ferparrav@outlook.com" method="POST" target="_blank">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" value="https://logiacol.com/gracias.html">
-        <div class="mb-3">
-          <label for="nombre">Nombre</label>
-          <input type="text" class="form-control" id="nombre" name="nombre" required>
-        </div>
-        <div class="mb-3">
-          <label for="correo">Correo Electrónico</label>
-          <input type="email" class="form-control" id="correo" name="correo" required>
-        </div>
-        <div class="mb-3">
-          <label for="telefono">Teléfono</label>
-          <input type="text" class="form-control" id="telefono" name="telefono">
-        </div>
-        <div class="mb-3">
-          <label for="mensaje">Mensaje</label>
-          <textarea class="form-control" rows="4" id="mensaje" name="mensaje" required></textarea>
-        </div>
-        <button type="submit" class="btn btn-success">Enviar</button>
-      </form>
+        <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://ferparrav.github.io/logiacol/#/contact">
+            <div class="mb-3">
+                <label for="nombre">Nombre</label>
+                <input type="text" class="form-control" id="nombre" name="nombre" required ngModel #nombre="ngModel">
+                <div *ngIf="nombre.invalid && nombre.touched" class="text-danger">El nombre es obligatorio.</div>
+            </div>
+            <div class="mb-3">
+                <label for="correo">Correo Electrónico</label>
+                <input type="email" class="form-control" id="correo" name="correo" required ngModel #correo="ngModel">
+                <div *ngIf="correo.invalid && correo.touched" class="text-danger">Ingrese un correo válido.</div>
+            </div>
+            <div class="mb-3">
+                <label for="telefono">Teléfono</label>
+                <input type="text" class="form-control" id="telefono" name="telefono" required pattern="\d{7,15}" ngModel #telefono="ngModel">
+                <div *ngIf="telefono.invalid && telefono.touched" class="text-danger">El teléfono es obligatorio y debe contener solo números (7-15 dígitos).</div>
+            </div>
+            <div class="mb-3">
+                <label for="mensaje">Mensaje</label>
+                <textarea class="form-control" rows="4" id="mensaje" name="mensaje" required ngModel #mensaje="ngModel"></textarea>
+                <div *ngIf="mensaje.invalid && mensaje.touched" class="text-danger">El mensaje no puede estar vacío.</div>
+            </div>
+            <button type="submit" class="btn btn-success" [disabled]="contactForm.invalid">Enviar</button>
+        </form>
     </div>
 
     <!-- Info contacto / WhatsApp -->

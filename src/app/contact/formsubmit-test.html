@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Verificación Formsubmit</title>
+</head>
+<body>
+<h2>Formulario de prueba para verificar correo</h2>
+<form action="https://formsubmit.co/ferparrav@outlook.com" method="POST" target="_blank">
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_next" value="https://ferparrav.github.io/logiacol/#/contact">
+  <div class="mb-3">
+    <label for="nombre">Nombre</label>
+    <input type="text" class="form-control" id="nombre" name="nombre" required>
+  </div>
+  <div class="mb-3">
+    <label for="correo">Correo Electrónico</label>
+    <input type="email" class="form-control" id="correo" name="correo" required>
+  </div>
+  <div class="mb-3">
+    <label for="telefono">Teléfono</label>
+    <input type="text" class="form-control" id="telefono" name="telefono">
+  </div>
+  <div class="mb-3">
+    <label for="mensaje">Mensaje</label>
+    <textarea class="form-control" rows="4" id="mensaje" name="mensaje" required></textarea>
+  </div>
+  <button type="submit" class="btn btn-success">Enviar</button>
+</form>
+</body>
+</html>
