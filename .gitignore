@@ -16,3 +16,54 @@ _site/
 # counterproductive to check this file into the repository.
 # Details at https://github.com/github/pages-gem/issues/768
 Gemfile.lock
+
+# Node.js dependencies
+node_modules/
+package-lock.json
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Angular build output
+dist/
+.angular/
+out-tsc/
+
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+
+# macOS Finder tags
+.Spotlight-V100
+.Trashes
+
+# IDEs
+.idea/              # WebStorm project files
+.vscode/
+*.sublime*
+
+# Environment
+.env
+.env.*.local
+
+# Logs
+logs
+*.log
+
+# Compiled output
+tmp/
+temp/
+
+# Coverage reports
+coverage/
+
+# Others
+*.tgz
+*.swp
+*~
+
+# Git merge conflicts
+*.orig
