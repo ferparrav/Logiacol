@@ -1,49 +1,58 @@
 <div class="container mt-5 pt-5">
-  <h2 class="text-center mb-4">Contáctenos</h2>
-  <div class="row">
-    <!-- Formulario -->
-    <div class="col-md-6">
-        <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_next" value="https://ferparrav.github.io/logiacol/#/contact">
-            <div class="mb-3">
-                <label for="nombre">Nombre</label>
-                <input type="text" class="form-control" id="nombre" name="nombre" required ngModel #nombre="ngModel">
-                <div *ngIf="nombre.invalid && nombre.touched" class="text-danger">El nombre es obligatorio.</div>
-            </div>
-            <div class="mb-3">
-                <label for="correo">Correo Electrónico</label>
-                <input type="email" class="form-control" id="correo" name="correo" required ngModel #correo="ngModel">
-                <div *ngIf="correo.invalid && correo.touched" class="text-danger">Ingrese un correo válido.</div>
-            </div>
-            <div class="mb-3">
-                <label for="telefono">Teléfono</label>
-                <input type="text" class="form-control" id="telefono" name="telefono" required pattern="\d{7,15}" ngModel #telefono="ngModel">
-                <div *ngIf="telefono.invalid && telefono.touched" class="text-danger">El teléfono es obligatorio y debe contener solo números (7-15 dígitos).</div>
-            </div>
-            <div class="mb-3">
-                <label for="mensaje">Mensaje</label>
-                <textarea class="form-control" rows="4" id="mensaje" name="mensaje" required ngModel #mensaje="ngModel"></textarea>
-                <div *ngIf="mensaje.invalid && mensaje.touched" class="text-danger">El mensaje no puede estar vacío.</div>
-            </div>
-            <button type="submit" class="btn btn-success" [disabled]="contactForm.invalid">Enviar</button>
-        </form>
-    </div>
+    <h2 class="text-center mb-4">Contáctenos</h2>
+    <div class="row">
+        <!-- Formulario -->
+        <div class="col-md-6">
+            <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="https://ferparrav.github.io/logiacol/#/contact">
+                <div class="mb-3">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" required ngModel
+                           #nombre="ngModel">
+                    <div *ngIf="nombre.invalid && nombre.touched" class="text-danger">El nombre es obligatorio.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="correo">Correo Electrónico</label>
+                    <input type="email" class="form-control" id="correo" name="correo" required ngModel
+                           #correo="ngModel">
+                    <div *ngIf="correo.invalid && correo.touched" class="text-danger">Ingrese un correo válido.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="telefono">Teléfono</label>
+                    <input type="text" class="form-control" id="telefono" name="telefono" required pattern="\d{7,15}"
+                           ngModel #telefono="ngModel">
+                    <div *ngIf="telefono.invalid && telefono.touched" class="text-danger">El teléfono es obligatorio y
+                        debe contener solo números (7-15 dígitos).
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="mensaje">Mensaje</label>
+                    <textarea class="form-control" rows="4" id="mensaje" name="mensaje" required ngModel
+                              #mensaje="ngModel"></textarea>
+                    <div *ngIf="mensaje.invalid && mensaje.touched" class="text-danger">El mensaje no puede estar
+                        vacío.
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-success" [disabled]="contactForm.invalid">Enviar</button>
+            </form>
+        </div>
 
-    <!-- Info contacto / WhatsApp -->
-    <div class="col-md-6">
-      <h5 class="mt-3">¿Prefieres escribirnos directamente?</h5>
-      <a class="btn btn-outline-success mt-2 mb-4" target="_blank" href="https://wa.me/573125690879">
-        Escríbenos por WhatsApp
-      </a>
-      <hr>
-      <p><strong>📍 Dirección:</strong> Calle 5 # 5-01 Centro, Tello, Huila</p>
-      <p><strong>📞 Teléfonos: </strong>
-        <a href="tel:+573125690879">312 569 0879</a> -
-        <a href="tel:+573205947671">320 594 7671</a>
-      </p>
-      <p><strong>📧 Correo: </strong> <a href="mailto:operaciones&#64;logiacol.com">operaciones&#64;logiacol.com</a></p>
-      <p><strong>🕗 Horario:</strong> Lunes a viernes, 8:00am - 6:00pm</p>
+        <!-- Info contacto / WhatsApp -->
+        <div class="col-md-6">
+            <h5 class="mt-3">¿Prefieres escribirnos directamente?</h5>
+            <a class="btn btn-outline-success mt-2 mb-4" target="_blank" href="https://wa.me/573125690879">
+                <i class="bi bi-whatsapp"></i> Escríbenos por WhatsApp
+            </a>
+            <hr>
+            <p><strong><i class="bi bi-geo-alt-fill" style="color: #1A5239;"></i> Dirección:</strong> Calle 5 # 5-01 Centro, Tello, Huila</p>
+            <p><strong><i class="bi bi-telephone-fill" style="color: #1A5239;"></i> Teléfonos: </strong>
+                <a href="tel:+573125690879">312 569 0879</a> -
+                <a href="tel:+573205947671">320 594 7671</a>
+            </p>
+            <p><strong><i class="bi bi-envelope-fill" style="color: #1A5239;"></i> Correo: </strong> <a
+                    href="mailto:operaciones&#64;logiacol.com">operaciones&#64;logiacol.com</a></p>
+            <p><strong><i class="bi bi-clock-fill" style="color: #1A5239;"></i> Horario:</strong> Lunes a viernes, 8:00am - 6:00pm</p>
+        </div>
     </div>
-  </div>
 </div>
